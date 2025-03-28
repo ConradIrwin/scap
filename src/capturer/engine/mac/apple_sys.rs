@@ -1,3 +1,7 @@
+#![allow(non_upper_case_globals)]
+
+pub use screencapturekit_sys::os_types::base::*;
+
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct __CFDictionary {
@@ -35,6 +39,7 @@ extern "C" {
         theType: CFNumberType,
         valuePtr: *mut ::std::os::raw::c_void,
     ) -> Boolean;
+    pub fn CMTimeGetSeconds(time: CMTime) -> Float64;
     pub static SCStreamFrameInfoStatus: SCStreamFrameInfo;
 }
 pub const CFNumberType_kCFNumberSInt64Type: CFNumberType = 4;
